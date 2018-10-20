@@ -14,8 +14,6 @@ class Login extends React.Component{
     }
     xhr.open("GET", 'https://www.linkedin.com/oauth/v2/authorization', true);
     console.log('data', xhr.send());
-    // axios.get('https://www.linkedin.com/oauth/v2/authorization')
-    // .then(json => console.log(json.data));
   }
 
   responseLinkedin(response) {
@@ -28,7 +26,7 @@ class Login extends React.Component{
         <h2>Network Challenge</h2>
         <form action="/action_page.php">
           <div className="imgcontainer">
-            <img src="../user.png" />
+            <img src="https://raw.githubusercontent.com/Priya67/hackathon1/master/user.png" />
           </div>
 
           <div className="container">

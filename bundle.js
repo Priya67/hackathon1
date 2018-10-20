@@ -9746,8 +9746,6 @@ var Login = function (_React$Component) {
       };
       xhr.open("GET", 'https://www.linkedin.com/oauth/v2/authorization', true);
       console.log('data', xhr.send());
-      // axios.get('https://www.linkedin.com/oauth/v2/authorization')
-      // .then(json => console.log(json.data));
     }
   }, {
     key: 'responseLinkedin',
@@ -9771,7 +9769,7 @@ var Login = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'imgcontainer' },
-            _react2.default.createElement('img', { src: '../user.png' })
+            _react2.default.createElement('img', { src: 'https://raw.githubusercontent.com/Priya67/hackathon1/master/user.png' })
           ),
           _react2.default.createElement(
             'div',
