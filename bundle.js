@@ -25862,9 +25862,18 @@ var Dashboard = function (_React$Component) {
                 _react2.default.createElement("br", null),
                 _react2.default.createElement("br", null),
                 _react2.default.createElement(
-                  "a",
-                  { className: "buttonStyle", href: "https://www.eventbrite.com" },
-                  "Add events"
+                  "div",
+                  { className: "buttons" },
+                  _react2.default.createElement(
+                    "a",
+                    { className: "buttonStyle", href: "https://www.eventbrite.com" },
+                    "Add events"
+                  ),
+                  _react2.default.createElement(
+                    "a",
+                    { className: "buttonStyle1", href: "https://www.eventbrite.com" },
+                    "Choose from suggestions"
+                  )
                 )
               )
             )

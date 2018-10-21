@@ -27,7 +27,7 @@ button:hover {
     text-align: center;
     margin: 24px 0 12px 0;
 }
-img.avatar {
+img {
     width: 40%;
     border-radius: 50%;
 }
@@ -110,4 +110,21 @@ span.psw {
   color: black;
   padding: 10px;
   display: inline-block;
+}
+
+.buttonStyle1 {
+  margin-left: 40px;
+  background-color: white;
+  border-radius: 3px;
+  border-color: 1px solid gray;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: inline-block;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

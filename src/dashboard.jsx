@@ -44,9 +44,14 @@ class Dashboard extends React.Component{
                <input type="checkbox" name="event6" value="Women in the Workplace in 2018" checked />
                <a href="https://www.eventbrite.com/e/women-in-the-workplace-in-2018-tickets-48900356282?aff=ebdssbdestsearch">
                Women in the Workplace in 2018 </a><br /><br />
+               <div className="buttons">
                  <a className="buttonStyle" href="https://www.eventbrite.com">
-                  Add events
-                </a>
+                 Add events
+               </a>
+               <a className="buttonStyle1" href="https://www.eventbrite.com">
+               Choose from suggestions
+             </a>
+               </div>
 
           </form>
 
