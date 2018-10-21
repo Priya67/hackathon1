@@ -25931,7 +25931,7 @@ var Home = function (_React$Component) {
     key: 'render',
     value: function render() {
       console.log('here', this.state);
-      return this.state.loggedIn ? _react2.default.createElement(_login2.default, { loginUser: this.loginUser }) : _react2.default.createElement(_dashboard2.default, null);
+      return !this.state.loggedIn ? _react2.default.createElement(_login2.default, { loginUser: this.loginUser }) : _react2.default.createElement(_dashboard2.default, null);
     }
   }]);
 

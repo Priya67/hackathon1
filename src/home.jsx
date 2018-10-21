@@ -17,7 +17,7 @@ class Home extends React.Component {
   render() {
     console.log('here', this.state);
     return (
-      this.state.loggedIn ? <Login loginUser={this.loginUser} /> : <Dashboard />
+      !this.state.loggedIn ? <Login loginUser={this.loginUser} /> : <Dashboard />
     );
   }
 }
