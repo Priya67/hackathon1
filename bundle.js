@@ -9799,7 +9799,7 @@ var Login = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'imgcontainer' },
-            _react2.default.createElement('img', { src: 'https://raw.githubusercontent.com/Priya67/hackathon1/master/user.png' })
+            _react2.default.createElement('img', { src: 'https://raw.githubusercontent.com/Priya67/hackathon1/master/image.png' })
           ),
           _react2.default.createElement(
             'div',
@@ -25861,7 +25861,11 @@ var Dashboard = function (_React$Component) {
                 ),
                 _react2.default.createElement("br", null),
                 _react2.default.createElement("br", null),
-                _react2.default.createElement("input", { type: "submit", value: "Add events", className: "button" })
+                _react2.default.createElement(
+                  "a",
+                  { className: "buttonStyle", href: "https://www.eventbrite.com" },
+                  "Add events"
+                )
               )
             )
           )

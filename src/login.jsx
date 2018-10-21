@@ -52,7 +52,7 @@ class Login extends React.Component{
           <h2>Network Challenge</h2>
           <form action="/action_page.php">
           <div className="imgcontainer">
-            <img src="https://raw.githubusercontent.com/Priya67/hackathon1/master/user.png" />
+            <img src="https://raw.githubusercontent.com/Priya67/hackathon1/master/image.png" />
           </div>
 
           <div className="container">
