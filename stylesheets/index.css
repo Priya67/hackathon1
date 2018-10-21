@@ -52,3 +52,56 @@ span.psw {
        width: 100%;
     }
 }
+
+.new-container {
+ display: flex;
+ background-color: #11b2d6;
+ height: 300px;
+ align-items: top;
+ justify-content: center;
+}
+
+.new-container1 {
+  display: flex;
+  background-color: orange;
+  height: 300px;
+  align-items: top;
+  justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+  background-color: orange;
+  align-items: center;
+
+}
+
+.new-flex-container {
+ display: flex;
+ background-color: #11b2d6;
+ width: 600px;
+ margin: 30px;
+ height: 105px;
+ align-items: top;
+ justify-content: center;
+}
+
+.flex-container > div {
+
+  width: 350px;
+  margin: 30px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 18px;
+  align-items: top;
+  justify-content: top;
+  font-weight: bold;
+}
+
+.divback: {
+  background-color:#11b2d6;
+}
+
+.statusPage {
+  text-align: center; background-color: #11b2d6;
+}

@@ -9720,6 +9720,10 @@ var _axios = __webpack_require__(196);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _dashboard = __webpack_require__(215);
+
+var _dashboard2 = _interopRequireDefault(_dashboard);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9734,7 +9738,19 @@ var Login = function (_React$Component) {
   function Login(props) {
     _classCallCheck(this, Login);
 
-    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+
+    _this.state = {
+      showDashboard: false,
+      errors: true,
+      id: null,
+      pwd: null
+    };
+    _this.login = _this.login.bind(_this);
+    _this.updateId = _this.updateId.bind(_this);
+    _this.updatePwd = _this.updatePwd.bind(_this);
+    _this.authorizeUser = _this.authorizeUser.bind(_this);
+    return _this;
   }
 
   _createClass(Login, [{
@@ -9748,14 +9764,28 @@ var Login = function (_React$Component) {
       console.log('data', xhr.send());
     }
   }, {
-    key: 'responseLinkedin',
-    value: function responseLinkedin(response) {
-      console.log(response);
+    key: 'login',
+    value: function login() {
+      console.log('setting state');
+      if (this.state.id && this.state.pwd) {
+        this.setState({ showDashboard: true });
+        // this.props.loginUser();
+      }
+    }
+  }, {
+    key: 'updateId',
+    value: function updateId(field) {
+      this.setState({ id: field });
+    }
+  }, {
+    key: 'updatePwd',
+    value: function updatePwd(field) {
+      this.setState({ pwd: field });
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
+      return this.state.id && this.state.pwd && this.state.showDashboard ? _react2.default.createElement(_dashboard2.default, null) : _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
@@ -9783,7 +9813,9 @@ var Login = function (_React$Component) {
                 'Username'
               )
             ),
-            _react2.default.createElement('input', { type: 'text', placeholder: 'Enter Username', name: 'uname', required: true }),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'Enter Username', name: 'uname', required: true,
+              onChange: this.updateId
+            }),
             _react2.default.createElement(
               'label',
               null,
@@ -9793,12 +9825,15 @@ var Login = function (_React$Component) {
                 'Password'
               )
             ),
-            _react2.default.createElement('input', { type: 'password', placeholder: 'Enter Password', name: 'psw', required: true }),
+            _react2.default.createElement('input', { type: 'password', placeholder: 'Enter Password', name: 'psw', required: true,
+              onChange: this.updatePwd
+            }),
             _react2.default.createElement(
               'button',
-              null,
+              { onClick: this.login },
               'Login'
             ),
+            this.state.showDashboard && this.state.id && this.state.pwd ? _react2.default.createElement(_dashboard2.default, null) : _react2.default.createElement('div', null),
             _react2.default.createElement(
               'label',
               null,
@@ -9869,14 +9904,14 @@ var _reactDom = __webpack_require__(84);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _login = __webpack_require__(83);
+var _Home = __webpack_require__(216);
 
-var _login2 = _interopRequireDefault(_login);
+var _Home2 = _interopRequireDefault(_Home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  _reactDom2.default.render(_react2.default.createElement(_login2.default, null), document.getElementById('main'));
+  _reactDom2.default.render(_react2.default.createElement(_Home2.default, null), document.getElementById('main'));
 });
 
 /***/ }),
@@ -25690,6 +25725,220 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
 
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dashboard = function (_React$Component) {
+  _inherits(Dashboard, _React$Component);
+
+  function Dashboard() {
+    _classCallCheck(this, Dashboard);
+
+    return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).apply(this, arguments));
+  }
+
+  _createClass(Dashboard, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "h1",
+          null,
+          "STATUS PAGE"
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "flex-container" },
+          _react2.default.createElement(
+            "div",
+            null,
+            "MASTER"
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            "100 EVENTS"
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            "555 CONNECTIONS"
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "divback" },
+          _react2.default.createElement(
+            "h1",
+            { className: "statusPage" },
+            "WEEKLY GOAL"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "new-container" },
+            _react2.default.createElement(
+              "h2",
+              null,
+              "Events"
+            ),
+            _react2.default.createElement("br", null),
+            _react2.default.createElement(
+              "div",
+              { className: "new-flex-container" },
+              _react2.default.createElement(
+                "form",
+                null,
+                _react2.default.createElement("input", { type: "checkbox", name: "event1", value: "WomenHack - The All-Women Hackathon San Francisco" }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.facebook.com/events/1581985555437397/" },
+                  "WomenHack - The All-Women Hackathon San Francisco"
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "checkbox", name: "event2", value: "Workshop for women in Big Data" }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.google.ru/" },
+                  "Workshop for women in Big Data"
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "checkbox", name: "event3", value: "Fireside chat with Noga Eshed and Natasha Noy", checked: true }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.eventbrite.com/e/fireside-chat-with-noga-eshed-and-natasha-noy-russian-speaking-women-in-tech-dinner-33-tickets-26063374254" },
+                  "Fireside chat with Noga Eshed and Natasha Noy"
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "checkbox", name: "event4", value: "Women Calling for Women Tuesdays", checked: true }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.eventbrite.com/e/women-calling-for-women-tuesdays-tickets-50892066541?aff=ebdssbdestsearch" },
+                  "Women Calling for Women Tuesdays"
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "checkbox", name: "event5", value: "Women in Engineering Career Fair", checked: true }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.eventbrite.com/e/women-in-engineering-career-fair-tickets-50510304681?aff=ebdssbdestsearch" },
+                  "Women in Engineering Career Fair "
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "checkbox", name: "event6", value: "Women in the Workplace in 2018", checked: true }),
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://www.eventbrite.com/e/women-in-the-workplace-in-2018-tickets-48900356282?aff=ebdssbdestsearch" },
+                  "Women in the Workplace in 2018 "
+                ),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "submit", value: "Add events", className: "button" })
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Dashboard;
+}(_react2.default.Component);
+
+exports.default = Dashboard;
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _login = __webpack_require__(83);
+
+var _login2 = _interopRequireDefault(_login);
+
+var _dashboard = __webpack_require__(215);
+
+var _dashboard2 = _interopRequireDefault(_dashboard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_React$Component) {
+  _inherits(Home, _React$Component);
+
+  function Home(props) {
+    _classCallCheck(this, Home);
+
+    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+    _this.state = {
+      loggedIn: false
+    };
+    return _this;
+  }
+
+  _createClass(Home, [{
+    key: 'loginUser',
+    value: function loginUser() {
+      this.setState({ loggedIn: true });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      console.log('here', this.state);
+      return this.state.loggedIn ? _react2.default.createElement(_login2.default, { loginUser: this.loginUser }) : _react2.default.createElement(_dashboard2.default, null);
+    }
+  }]);
+
+  return Home;
+}(_react2.default.Component);
+
+exports.default = Home;
 
 /***/ })
 /******/ ]);

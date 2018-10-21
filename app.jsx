@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Login from './src/login';
+import Home from './src/Home';
 
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(<Login />, document.getElementById('main'));
+  ReactDOM.render(<Home />, document.getElementById('main'));
 });
